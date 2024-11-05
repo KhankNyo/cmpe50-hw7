@@ -8,6 +8,12 @@ public:
     string_array()
         : m_DynamicArray(nullptr), m_Size(0)
     {}
+    ~string_array()
+    {
+        delete[] m_DynamicArray;
+        m_DynamicArray = nullptr;
+        m_Size = 0;
+    }
     bool Add(const string& NewEntry)
     {
         m_Size++;
